@@ -763,14 +763,11 @@ body::after {
 }
 
 .hero__scroll-indicator {
-  position: absolute;
-  bottom: var(--space-lg);
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-xs);
+  margin-top: var(--space-2xl);
   opacity: 0;
   animation: heroScrollFade 1s var(--ease-out) 2s forwards;
 }
