@@ -694,6 +694,7 @@ body::after {
   align-items: center;
   position: relative;
   padding: var(--space-4xl) 0 var(--space-3xl);
+  overflow: hidden;
 }
 
 .hero__container {
@@ -1055,6 +1056,8 @@ body::after {
   transition: all var(--duration-normal) var(--ease-out-expo);
   border: 1px solid var(--border-light);
   position: relative;
+  max-width: 900px;
+  margin: 0 auto;
   width: 100%;
 }
 
