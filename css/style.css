@@ -697,6 +697,7 @@ body::after {
   align-items: center;
   position: relative;
   padding: var(--space-4xl) 0 var(--space-3xl);
+  overflow: hidden;
 }
 
 .hero__container {
@@ -840,9 +841,11 @@ body::after {
 .trust__marquee {
   overflow: hidden;
   width: 100%;
+  max-width: 100vw;
   margin-top: var(--space-lg);
   mask-image: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
+  position: relative;
 }
 
 .trust__marquee-track {
