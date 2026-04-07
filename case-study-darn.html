@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DARN Group — Kurti Consulting</title>
+  <meta name="description" content="How we replaced a 39,000-row Excel spreadsheet with a real-time business dashboard and mobile apps.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='system-ui' font-weight='bold'>K</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/case-study.css">
+</head>
+<body>
+
+  <div class="cursor" id="cursor">
+    <div class="cursor__dot"></div>
+    <div class="cursor__outline"></div>
+  </div>
+
+  <header class="nav" id="nav">
+    <div class="nav__container">
+      <a href="/" class="nav__logo"><span class="nav__logo-main">KURTI</span><span class="nav__logo-sub">consulting</span></a>
+      <nav class="nav__links">
+        <a href="/#services" class="nav__link">Services</a>
+        <a href="/#work" class="nav__link">Work</a>
+        <a href="/#about" class="nav__link">About</a>
+        <a href="/#contact" class="nav__link">Contact</a>
+      </nav>
+      <a href="/#contact" class="nav__cta magnetic-btn"><span>Book a Call</span></a>
+      <button class="nav__hamburger" id="navHamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+      <a href="/#services" class="mobile-menu__link">Services</a>
+      <a href="/#work" class="mobile-menu__link">Work</a>
+      <a href="/#about" class="mobile-menu__link">About</a>
+      <a href="/#contact" class="mobile-menu__link">Contact</a>
+      <a href="/#contact" class="mobile-menu__cta">Book a Call</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="cs-hero">
+      <div class="cs-container">
+        <a href="/#work" class="cs-back mono-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to Work
+        </a>
+        <div class="cs-hero__meta">
+          <span class="tag">Gas Distribution</span>
+          <span class="mono-label">Feb — Apr 2026</span>
+          <span class="mono-label">33 Days</span>
+        </div>
+        <h1 class="cs-hero__title">We Replaced a 39,000-Row<br><span class="cs-hero__accent">Excel Nightmare</span> with a<br>Real-Time Business Dashboard</h1>
+        <p class="cs-hero__tagline">A growing LPG gas distribution company managing thousands of daily transactions across Kosovo. Their entire business ran on a single Excel workbook with 39,000 rows.</p>
+        <div class="cs-hero__scroll">
+          <div class="cs-hero__scroll-line"></div>
+          <span class="mono-label">Scroll to read</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERO IMAGE — on dark gradient -->
+    <section class="cs-image cs-image--gradient" style="--gf: #0f172a; --gt: #1e1b4b;">
+      <div class="cs-container">
+        <div class="cs-frame cs-frame--float">
+          <div class="cs-frame__bar"><span></span><span></span><span></span></div>
+          <div class="cs-frame__screen">
+            <img src="assets/darn-dashboard.png" alt="DARN Group business dashboard" class="cs-frame__img cs-frame__img--privacy" loading="eager" width="3407" height="1275">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHALLENGE -->
+    <section class="cs-text">
+      <div class="cs-container cs-container--narrow">
+        <span class="mono-label cs-label">The Challenge</span>
+        <h2 class="cs-heading">Their entire business lived inside one spreadsheet</h2>
+        <p>Finding a customer record meant scrolling through dozens of tabs. Invoicing took hours. One accidental delete could wipe out months of data.</p>
+        <p>Field teams called the office every time they needed to check a delivery status. There was no mobile access, no real-time visibility.</p>
+      </div>
+    </section>
+
+    <!-- SOLUTION (merged: before/after + solution text + distributor) -->
+    <section class="cs-text">
+      <div class="cs-container cs-container--narrow">
+        <span class="mono-label cs-label">The Solution</span>
+        <h2 class="cs-heading">A 20-page dashboard that runs the entire operation</h2>
+        <p>The dashboard spans 20 pages: financial overview, distribution tracking, expense management, gas depot purchases, debt reporting, invoice generation, bank reconciliation, monthly profit analysis, client management, and contract tracking.</p>
+        <p>Two existing Android apps were extended with new modules — debt management, cylinder tracking, heater inventory, and ARBK business registry integration — and re-pointed to work with the new backend.</p>
+        <p>Before the dashboard could go live, we migrated the entire 39,000-row Excel workbook. Custom Python scripts imported, validated, and audited every row — zero data loss.</p>
+      </div>
+    </section>
+
+    <!-- THE PLATFORM (merged: before/after + 20 pages + API + distributor + reports/import) -->
+    <section class="cs-image" style="padding: 20px 0;">
+      <div class="cs-container">
+        <img src="assets/visual-darn-before-after.png" alt="Before vs After workflow" class="cs-designed" style="margin-bottom: 24px;" loading="lazy" width="1200" height="700">
+      </div>
+    </section>
+
+    <section class="cs-image cs-image--gradient" style="--gf: #0a3d3c; --gt: #0E7C7B; padding: 60px 0;">
+      <div class="cs-container">
+        <p class="cs-caption cs-caption--light mono-label" style="margin-bottom: 20px;">Distribution tracking replaced manual client lookups</p>
+        <div class="cs-frame cs-frame--float">
+          <div class="cs-frame__bar"><span></span><span></span><span></span></div>
+          <div class="cs-frame__screen">
+            <img src="assets/darn-distributor.png" alt="Distribution tracking" class="cs-frame__img cs-frame__img--privacy" loading="lazy" width="1900" height="1041">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-image" style="padding: 40px 0;">
+      <div class="cs-container">
+        <p class="cs-caption mono-label" style="margin-bottom: 20px;">Every Excel tab became a dedicated dashboard page</p>
+        <img src="assets/visual-darn-20pages.png" alt="20 dashboard pages" class="cs-designed" loading="lazy" width="1200" height="700">
+      </div>
+    </section>
+
+    <section class="cs-image cs-image--gradient" style="--gf: #0a0a1a; --gt: #1e1b4b; padding: 60px 0;">
+      <div class="cs-container">
+        <p class="cs-caption cs-caption--light mono-label" style="margin-bottom: 20px;">23 API endpoints connect the dashboard, mobile apps, and external services</p>
+        <img src="assets/visual-darn-api.png" alt="REST API architecture" class="cs-designed" loading="lazy" width="1200" height="700">
+      </div>
+    </section>
+
+    <section class="cs-image cs-image--gradient" style="--gf: #1a1a2e; --gt: #16213e;">
+      <div class="cs-container">
+        <div class="cs-pair">
+          <div class="cs-pair__item">
+            <div class="cs-frame cs-frame--float">
+              <div class="cs-frame__bar"><span></span><span></span><span></span></div>
+              <div class="cs-frame__screen">
+                <img src="assets/darn-reports.png" alt="Monthly reporting" class="cs-frame__img cs-frame__img--privacy" loading="lazy" width="1901" height="1031">
+              </div>
+            </div>
+            <p class="cs-caption cs-caption--light mono-label">Monthly reporting</p>
+          </div>
+          <div class="cs-pair__item">
+            <div class="cs-frame cs-frame--float">
+              <div class="cs-frame__bar"><span></span><span></span><span></span></div>
+              <div class="cs-frame__screen">
+                <img src="assets/darn-import.png" alt="Excel data migration" class="cs-frame__img" loading="lazy" width="1896" height="1023">
+              </div>
+            </div>
+            <p class="cs-caption cs-caption--light mono-label">Excel data migration</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOBILE APPS — dark section with 5 phones -->
+    <section class="cs-text cs-text--dark">
+      <div class="cs-container cs-container--narrow">
+        <span class="mono-label cs-label cs-label--light">Mobile Apps</span>
+        <h2 class="cs-heading cs-heading--light">Your team works in the field. Your software should too.</h2>
+        <p class="cs-p--light">Two existing Android apps were extended with new modules. Drivers scan barcodes, record deliveries, collect payments, and register contracts — all synced in real time.</p>
+      </div>
+    </section>
+
+    <section class="cs-phones">
+      <div class="cs-container">
+        <div class="cs-phones__row">
+          <div class="cs-phone">
+            <img src="assets/darn-admin-app.jpg" alt="Admin app" class="cs-phone__img" loading="lazy" width="720" height="1560">
+            <span class="cs-phone__label mono-label">Admin Home</span>
+          </div>
+          <div class="cs-phone cs-phone--up">
+            <img src="assets/darn-client-app.jpg" alt="Delivery app" class="cs-phone__img" loading="lazy" width="720" height="1560">
+            <span class="cs-phone__label mono-label">Delivery Home</span>
+          </div>
+          <div class="cs-phone">
+            <img src="assets/darn-truck.jpg" alt="Truck loading" class="cs-phone__img" loading="lazy" width="720" height="1560">
+            <span class="cs-phone__label mono-label">Truck Loading</span>
+          </div>
+          <div class="cs-phone cs-phone--up">
+            <img src="assets/darn-delivery.jpg" alt="Delivery flow" class="cs-phone__img" loading="lazy" width="720" height="1560">
+            <span class="cs-phone__label mono-label">Delivery Flow</span>
+          </div>
+          <div class="cs-phone">
+            <img src="assets/darn-arbk.jpg" alt="ARBK registration" class="cs-phone__img" loading="lazy" width="720" height="1560">
+            <span class="cs-phone__label mono-label">ARBK Registration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL ARCHITECTURE (merged: migration + infrastructure) -->
+    <section class="cs-image" style="padding: 20px 0;">
+      <div class="cs-container">
+        <img src="assets/visual-darn-migration.png" alt="Data migration flow" class="cs-designed" style="margin-bottom: 24px;" loading="lazy" width="1200" height="700">
+        <img src="assets/visual-darn-infra.png" alt="CI/CD infrastructure" class="cs-designed" loading="lazy" width="1200" height="700">
+      </div>
+    </section>
+
+    <!-- KPIs -->
+    <section class="cs-kpis">
+      <div class="cs-container cs-container--narrow">
+        <span class="mono-label cs-label">The Results</span>
+        <h2 class="cs-heading">The numbers tell the story</h2>
+        <ul class="cs-kpis__list">
+          <li><strong>39,000</strong> rows of data replaced</li>
+          <li><strong>33</strong> days from start to launch</li>
+          <li><strong>373</strong> commits shipped</li>
+          <li><strong>23</strong> API endpoints</li>
+          <li><strong>20</strong> dashboard pages</li>
+          <li><strong>2</strong> mobile apps extended</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- KEY INSIGHT -->
+    <section class="cs-insight">
+      <div class="cs-container cs-container--narrow">
+        <div class="cs-insight__card">
+          <svg class="cs-insight__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 01-1 1H9a1 1 0 01-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"/><path d="M9 21h6M10 17v1M14 17v1"/></svg>
+          <blockquote>The biggest challenge wasn't the code — it was understanding the business. We spent the first week studying the spreadsheet, mapping every formula to a database query. You can't replace a system you don't understand.</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDITS -->
+    <section class="cs-credits">
+      <div class="cs-container cs-container--narrow">
+        <div class="cs-credits__grid">
+          <div>
+            <h3 class="cs-credits__title mono-label">Tech Stack</h3>
+            <ul class="cs-credits__list">
+              <li>PHP 8.0+ / PDO</li>
+              <li>MySQL</li>
+              <li>REST API (23 endpoints)</li>
+              <li>Android / Java</li>
+              <li>Python (data migration)</li>
+              <li>PDF Generation</li>
+              <li>Email Automation</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="cs-credits__title mono-label">Timeline</h3>
+            <ul class="cs-credits__list">
+              <li>Feb — Apr 2026</li>
+              <li>33 days delivery</li>
+            </ul>
+            <h3 class="cs-credits__title mono-label" style="margin-top: 2em;">Team</h3>
+            <ul class="cs-credits__list">
+              <li>Fisnik Kurti — Engineering</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cs-cta">
+      <div class="cs-container">
+        <h2 class="cs-cta__title">Facing a similar challenge?</h2>
+        <a href="/#contact" class="btn btn--primary btn--large magnetic-btn">
+          <span>Let's Talk About Your Project</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- NEXT PROJECT -->
+    <section class="cs-next">
+      <a href="case-study-kumalire.html" class="cs-next__link">
+        <span class="mono-label">(Next project)</span>
+        <span class="cs-next__title">KuMaLire — AI Price Comparison</span>
+        <span class="cs-next__sub">AI / Retail &bull; 2025</span>
+      </a>
+    </section>
+
+  </main>
+
+  <div class="cs-progress"><div class="cs-progress__fill" id="pf"></div></div>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo"><span class="footer__logo-main">KURTI</span><span class="footer__logo-sub">consulting</span></div>
+          <p class="footer__tagline">Custom software for businesses<br>that have outgrown spreadsheets.</p>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title mono-label">Navigation</h4>
+          <a href="/" class="footer__link">Home</a>
+          <a href="/#services" class="footer__link">Services</a>
+          <a href="/#work" class="footer__link">Work</a>
+          <a href="/#contact" class="footer__link">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title mono-label">Case Studies</h4>
+          <a href="case-study-darn.html" class="footer__link">DARN Group</a>
+          <a href="case-study-kumalire.html" class="footer__link">KuMaLire</a>
+          <a href="case-study-ecu.html" class="footer__link">ECU Tuner</a>
+          <a href="case-study-halrcall.html" class="footer__link">Enterprise SaaS</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title mono-label">Connect</h4>
+          <a href="mailto:hello@kurticonsulting.com" class="footer__link">hello@kurticonsulting.com</a>
+          <a href="https://github.com/fisnik-kurti" class="footer__link" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/fisnik-kurti" class="footer__link" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Kurti Consulting. All rights reserved.</p>
+        <p class="footer__location">Pristina, Kosovo &bull; Available EST Business Hours</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="page-transition" id="pageTransition">
+    <div class="page-transition__bar"></div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    const pf=document.getElementById('pf');
+    if(pf){let t=false;window.addEventListener('scroll',()=>{if(!t){t=true;requestAnimationFrame(()=>{pf.style.width=Math.min((window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100,100)+'%';t=false;});}},{passive:true});}
+  </script>
+</body>
+</html>

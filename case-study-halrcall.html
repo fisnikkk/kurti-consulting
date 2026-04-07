@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise SaaS Platform — Enterprise SaaS | Kurti Consulting</title>
+  <meta name="description" content="Frontend development, browser automation, and Chrome Extension engineering for an AI-powered sales platform.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='system-ui' font-weight='bold'>K</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/case-study.css">
+</head>
+<body>
+
+  <div class="cursor" id="cursor">
+    <div class="cursor__dot"></div>
+    <div class="cursor__outline"></div>
+  </div>
+
+  <header class="nav" id="nav">
+    <div class="nav__container">
+      <a href="/" class="nav__logo"><span class="nav__logo-main">KURTI</span><span class="nav__logo-sub">consulting</span></a>
+      <nav class="nav__links">
+        <a href="/#services" class="nav__link">Services</a>
+        <a href="/#work" class="nav__link">Work</a>
+        <a href="/#about" class="nav__link">About</a>
+        <a href="/#contact" class="nav__link">Contact</a>
+      </nav>
+      <a href="/#contact" class="nav__cta magnetic-btn"><span>Book a Call</span></a>
+      <button class="nav__hamburger" id="navHamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+      <a href="/#services" class="mobile-menu__link">Services</a>
+      <a href="/#work" class="mobile-menu__link">Work</a>
+      <a href="/#about" class="mobile-menu__link">About</a>
+      <a href="/#contact" class="mobile-menu__link">Contact</a>
+      <a href="/#contact" class="mobile-menu__cta">Book a Call</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="cs-hero">
+      <div class="cs-container">
+        <a href="/#work" class="cs-back mono-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to Work
+        </a>
+
+        <!-- NDA BADGE -->
+        <div class="cs-nda">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <span>Client details and screenshots are confidential. Full details available in a private conversation.</span>
+        </div>
+
+        <div class="cs-hero__meta">
+          <span class="tag">SaaS</span>
+          <span class="mono-label">2025 — Present</span>
+          <span class="mono-label">Ongoing Engagement</span>
+        </div>
+        <h1 class="cs-hero__title">Building the Automation Engine for an AI-Powered <span class="cs-hero__accent">Sales Platform</span></h1>
+        <p class="cs-hero__tagline">As part of a US-based product team, we build and ship features for a multi-channel outbound sales platform that automates prospect engagement across email and LinkedIn.</p>
+        <div class="cs-hero__scroll">
+          <div class="cs-hero__scroll-line"></div>
+          <span class="mono-label">Scroll to read</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE DIAGRAM — designed visual on dark -->
+    <section class="cs-image cs-image--gradient" style="--gf: #0a0a1a; --gt: #151530;">
+      <div class="cs-container">
+        <img src="assets/halr-architecture.png" alt="Chrome Extension and Express Backend architecture with API routes" class="cs-designed" loading="eager" width="1367" height="798">
+        <p class="cs-caption cs-caption--light mono-label">Chrome Extension ↔ Express Backend — four API routes powering the automation pipeline</p>
+      </div>
+    </section>
+
+    <!-- THE ENGAGEMENT -->
+    <section class="cs-text">
+      <div class="cs-container cs-container--narrow">
+        <span class="mono-label cs-label">The Engagement</span>
+        <h2 class="cs-heading">Joining a fast-moving product team</h2>
+        <p>We were brought in as part of the engineering team for a US-based SaaS startup building an AI-powered outbound sales platform. The product automates multi-channel prospect engagement — managing email sequences, LinkedIn outreach, and intelligent reply routing from a single dashboard.</p>
+        <p>The codebase was already 6,000+ lines when we joined. Our job wasn't to build from scratch — it was to jump into an existing architecture, understand the patterns, and start shipping features immediately.</p>
+      </div>
+    </section>
+
+    <!-- AUTOMATION RESULTS — designed visual -->
+    <section class="cs-image cs-image--gradient" style="--gf: #0f172a; --gt: #1e1b4b;">
+      <div class="cs-container">
+        <img src="assets/halr-automation.png" alt="Three LinkedIn actions automated: Post Like, Profile View, Follow with 100% success" class="cs-designed" loading="lazy" width="1401" height="857">
+        <p class="cs-caption cs-caption--light mono-label">Three LinkedIn actions automated end-to-end through the full stack — 100% success rate</p>
+      </div>
+    </section>
+
+    <!-- WHAT WE BUILT — FRONTEND -->
+    <section class="cs-text">
+      <div class="cs-container cs-container--narrow">
+        <span class="mono-label cs-label">Frontend Development</span>
+        <h2 class="cs-heading">Smart UI for complex automation workflows</h2>
+        <p>We built the Reply Action system in the email sequence builder — the interface that lets users configure what happens when a prospect replies to an automated email. Five possible actions with conditional logic, nested configuration options, and state that persists correctly to the database.</p>
+        <p>This sounds simple on paper. In practice, it required managing complex conditional visibility state across multiple React components and handling edge cases where prospects reply mid-sequence.</p>
+      </div>
+    </section>
+
+    <!-- WHAT WE BUILT — BROWSER AUTOMATION -->
+    <section class="cs-text cs-text--alt">
+      <div class="cs-container cs-container--narrow">
+        <span class="mono-label cs-label">Browser Automation</span>
+        <h2 class="cs-heading">Making LinkedIn think a human is browsing</h2>
+        <p>The platform automates LinkedIn actions at scale. The challenge: LinkedIn actively detects and blocks automated behavior. Standard tools get flagged within minutes.</p>
+        <p>We built the automation engine using Patchright (a stealth-optimized Playwright fork) with Chrome DevTools Protocol. Each session runs through Multilogin X with unique browser fingerprints. Every action includes randomized delays, human-like mouse movements, and natural scrolling patterns.</p>
+      </div>
+    </section>
+
+    <!-- BUG FIXES — designed visual -->
+    <section class="cs-image cs-image--gradient cs-image--compact" style="--gf: #1a1a2e; --gt: #16213e;">
+      <div class="cs-container">
+        <img src="assets/halr-bugfixes.png" alt="Production bug fixes: LinkedIn DOM changes, session filters, CORS resolution" class="cs-designed" loading="lazy" width="1386" height="847">
+        <p class="cs-caption cs-caption--light mono-label">Production fixes — LinkedIn DOM changes, session filter bugs, CORS infrastructure issues</p>
+      </div>
+    </section>
+
+    <!-- PRODUCTION BUG FIXES -->
+    <section class="cs-text">
+      <div class="cs-container cs-container--narrow">
+        <span class="mono-label cs-label">Production Reliability</span>
+        <h2 class="cs-heading">The unglamorous work that keeps systems running</h2>
+        <p>When LinkedIn changed their DOM structure — renaming button labels overnight — we updated both the server-side executor and the Chrome extension with fallback selectors for backward compatibility.</p>
+        <p>We fixed a session filter bug where the action queue only pulled from 'active' sessions, missing 'warming_up' ones. And we resolved a CORS/CSRF infrastructure issue that had blocked Chrome Extension communication for weeks.</p>
+      </div>
+    </section>
+
+    <!-- KPIs -->
+    <section class="cs-kpis">
+      <div class="cs-container cs-container--narrow">
+        <span class="mono-label cs-label">What This Demonstrates</span>
+        <h2 class="cs-heading">More than code — integration capability</h2>
+        <ul class="cs-kpis__list">
+          <li><strong>6,000+</strong> lines of existing codebase navigated</li>
+          <li><strong>4</strong> API routes built for Chrome Extension</li>
+          <li><strong>3</strong> LinkedIn actions automated end-to-end</li>
+          <li><strong>1</strong> CORS/CSRF infrastructure issue resolved</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- KEY INSIGHT -->
+    <section class="cs-insight">
+      <div class="cs-container cs-container--narrow">
+        <div class="cs-insight__card">
+          <svg class="cs-insight__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 01-1 1H9a1 1 0 01-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"/><path d="M9 21h6M10 17v1M14 17v1"/></svg>
+          <blockquote>Working within someone else's codebase isn't easier than building from scratch — it's harder. You have to understand their architecture, follow their patterns, and ship features that look like they've always been there. The real skill isn't writing code. It's reading 6,000 lines of someone else's code and knowing exactly where your feature fits.</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDITS -->
+    <section class="cs-credits">
+      <div class="cs-container cs-container--narrow">
+        <div class="cs-credits__grid">
+          <div>
+            <h3 class="cs-credits__title mono-label">Tech Stack</h3>
+            <ul class="cs-credits__list">
+              <li>React / TypeScript</li>
+              <li>Express / Node.js</li>
+              <li>Supabase / PostgreSQL</li>
+              <li>Patchright (Playwright fork)</li>
+              <li>Chrome DevTools Protocol</li>
+              <li>Multilogin X API</li>
+              <li>Chrome Extension (MV3)</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="cs-credits__title mono-label">Engagement</h3>
+            <ul class="cs-credits__list">
+              <li>2025 — Ongoing</li>
+              <li>Part of product team</li>
+            </ul>
+            <h3 class="cs-credits__title mono-label" style="margin-top: 2em;">Team</h3>
+            <ul class="cs-credits__list">
+              <li>Fisnik Kurti — Full-Stack Engineering</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cs-cta">
+      <div class="cs-container">
+        <h2 class="cs-cta__title">Need a developer who can hit the ground running in your codebase?</h2>
+        <p style="font-size: 17px; color: var(--text-secondary); margin-bottom: 32px; max-width: 560px; margin-left: auto; margin-right: auto;">We don't just build from scratch — we integrate into existing teams and ship features fast. If you need senior engineering capacity without the overhead of full-time hiring, let's talk.</p>
+        <a href="/#contact" class="btn btn--primary btn--large magnetic-btn">
+          <span>Let's Talk</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- NEXT PROJECT -->
+    <section class="cs-next">
+      <a href="case-study-darn.html" class="cs-next__link">
+        <span class="mono-label">(Next project)</span>
+        <span class="cs-next__title">DARN Group Dashboard</span>
+        <span class="cs-next__sub">Gas Distribution &bull; 2026</span>
+      </a>
+    </section>
+
+  </main>
+
+  <div class="cs-progress"><div class="cs-progress__fill" id="pf"></div></div>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo"><span class="footer__logo-main">KURTI</span><span class="footer__logo-sub">consulting</span></div>
+          <p class="footer__tagline">Custom software for businesses<br>that have outgrown spreadsheets.</p>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title mono-label">Navigation</h4>
+          <a href="/" class="footer__link">Home</a>
+          <a href="/#services" class="footer__link">Services</a>
+          <a href="/#work" class="footer__link">Work</a>
+          <a href="/#contact" class="footer__link">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title mono-label">Case Studies</h4>
+          <a href="case-study-darn.html" class="footer__link">DARN Group</a>
+          <a href="case-study-kumalire.html" class="footer__link">KuMaLire</a>
+          <a href="case-study-ecu.html" class="footer__link">ECU Tuner</a>
+          <a href="case-study-halrcall.html" class="footer__link">Enterprise SaaS</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title mono-label">Connect</h4>
+          <a href="mailto:hello@kurticonsulting.com" class="footer__link">hello@kurticonsulting.com</a>
+          <a href="https://github.com/fisnik-kurti" class="footer__link" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/fisnik-kurti" class="footer__link" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Kurti Consulting. All rights reserved.</p>
+        <p class="footer__location">Pristina, Kosovo &bull; Available EST Business Hours</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="page-transition" id="pageTransition">
+    <div class="page-transition__bar"></div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    const pf=document.getElementById('pf');
+    if(pf){let t=false;window.addEventListener('scroll',()=>{if(!t){t=true;requestAnimationFrame(()=>{pf.style.width=Math.min((window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100,100)+'%';t=false;});}},{passive:true});}
+  </script>
+</body>
+</html>

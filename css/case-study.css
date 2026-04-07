@@ -1,0 +1,173 @@
+/* ============================================= */
+/* CASE STUDY — warm paper, browser frames,      */
+/* dark gradients, 5 phones, workflow diagram     */
+/* ============================================= */
+
+/* Container */
+.cs-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--container-padding); }
+.cs-container--narrow { max-width: 720px; }
+.cs-container--wide { max-width: 960px; }
+
+/* ---- HERO ---- */
+.cs-hero { padding: 180px 0 80px; }
+@media (min-width: 768px) { .cs-hero { padding: 200px 0 100px; } }
+
+.cs-back { display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted); margin-bottom: 48px; transition: color 0.3s; }
+.cs-back:hover { color: var(--accent-teal); }
+
+.cs-hero__meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md); margin-bottom: var(--space-xl); }
+.cs-hero__title { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5.5vw, 64px); line-height: 1.08; letter-spacing: -0.03em; color: var(--text-primary); max-width: 850px; margin-bottom: var(--space-xl); }
+.cs-hero__accent { color: var(--accent-coral); }
+.cs-hero__tagline { font-size: clamp(16px, 2vw, 19px); line-height: 1.65; color: var(--text-secondary); max-width: 600px; }
+
+.cs-hero__scroll { display: flex; flex-direction: column; align-items: center; gap: var(--space-sm); opacity: 0.3; margin-top: 80px; }
+.cs-hero__scroll-line { width: 1px; height: 40px; background: var(--text-muted); }
+
+/* ---- GRADIENT IMAGE SECTIONS ---- */
+.cs-image--gradient {
+  background: linear-gradient(135deg, var(--gf, #0f172a), var(--gt, #1e1b4b));
+  padding: 80px 0;
+}
+.cs-image--gradient.cs-image--compact { padding: 60px 0; }
+@media (min-width: 768px) { .cs-image--gradient { padding: 100px 0; } }
+
+/* ---- BROWSER MOCKUP FRAME ---- */
+.cs-frame { background: #fff; border-radius: 10px; overflow: hidden; }
+.cs-frame--float { box-shadow: 0 30px 60px rgba(0,0,0,0.3), 0 15px 30px rgba(0,0,0,0.15); }
+
+.cs-frame__bar { display: flex; gap: 5px; padding: 8px 12px; background: #f0f0f0; }
+.cs-frame__bar span { width: 8px; height: 8px; border-radius: 50%; }
+.cs-frame__bar span:nth-child(1) { background: #ff5f56; }
+.cs-frame__bar span:nth-child(2) { background: #ffbd2e; }
+.cs-frame__bar span:nth-child(3) { background: #27ca40; }
+
+.cs-frame__screen { position: relative; }
+.cs-frame__img { width: 100%; height: auto; display: block; }
+.cs-frame__img--privacy { filter: blur(1.5px); }
+
+/* ---- SIDE-BY-SIDE PAIR ---- */
+.cs-pair { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
+@media (min-width: 768px) { .cs-pair { grid-template-columns: 1fr 1fr; gap: var(--space-xl); } }
+.cs-pair__item { display: flex; flex-direction: column; gap: var(--space-md); }
+.cs-pair__item .cs-frame { width: 100%; }
+
+/* Dark frame bar variant */
+.cs-frame__bar--dark { background: #2a2a2e; }
+.cs-frame__bar--dark span:nth-child(1) { background: #ff5f56; }
+.cs-frame__bar--dark span:nth-child(2) { background: #ffbd2e; }
+.cs-frame__bar--dark span:nth-child(3) { background: #27ca40; }
+
+/* ---- ENGINE STEPS (ECU case study) ---- */
+.cs-engines { display: flex; flex-direction: column; gap: var(--space-lg); margin-top: var(--space-xl); }
+.cs-engine { display: flex; gap: var(--space-lg); padding-bottom: var(--space-lg); border-bottom: 1px solid var(--border-light); }
+.cs-engine:last-child { border-bottom: none; }
+.cs-engine__num { color: var(--accent-teal); flex-shrink: 0; padding-top: 4px; }
+.cs-engine__title { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+.cs-engine__desc { font-size: 15px; line-height: 1.65; color: var(--text-secondary); }
+
+/* ---- NDA BADGE ---- */
+.cs-nda { display: flex; align-items: flex-start; gap: 10px; padding: 14px 18px; background: var(--bg-alt); border: 1px solid var(--border-light); border-radius: var(--radius-md); font-size: 13px; color: var(--text-secondary); margin-bottom: var(--space-xl); max-width: 600px; }
+.cs-nda svg { flex-shrink: 0; color: var(--text-muted); margin-top: 1px; }
+
+/* ---- DESIGNED VISUALS (full-width, rounded, no frame) ---- */
+.cs-designed { width: 100%; height: auto; display: block; border-radius: 12px; }
+
+/* ---- CAPTIONS ---- */
+.cs-caption { text-align: center; margin-top: var(--space-lg); color: var(--text-muted); }
+.cs-caption--light { color: rgba(255,255,255,0.4); }
+
+/* ---- TEXT SECTIONS ---- */
+.cs-text { padding: 100px 0; }
+@media (min-width: 768px) { .cs-text { padding: 120px 0; } }
+
+.cs-text--alt { background: var(--bg-alt); }
+.cs-text--dark { background: var(--bg-dark); color: var(--text-on-dark); padding: 100px 0 40px; }
+
+.cs-label { display: block; color: var(--accent-teal); margin-bottom: var(--space-md); }
+.cs-label--light { color: var(--text-on-dark-secondary); }
+
+.cs-heading { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: var(--space-xl); }
+.cs-heading--light { color: var(--text-on-dark); }
+
+.cs-text p { font-size: 17px; line-height: 1.75; color: var(--text-secondary); margin-bottom: var(--space-lg); }
+.cs-text p:last-child { margin-bottom: 0; }
+.cs-p--light { color: var(--text-on-dark-secondary) !important; }
+
+/* ---- BEFORE/AFTER WORKFLOW ---- */
+.cs-workflow { display: flex; flex-direction: column; gap: var(--space-xl); align-items: center; }
+@media (min-width: 768px) { .cs-workflow { flex-direction: row; align-items: flex-start; } }
+
+.cs-workflow__side { flex: 1; display: flex; flex-direction: column; gap: var(--space-md); }
+.cs-workflow__badge { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 14px; border-radius: var(--radius-full); width: fit-content; }
+.cs-workflow__badge--before { background: rgba(220,80,60,0.1); color: #c0392b; }
+.cs-workflow__badge--after { background: rgba(14,124,123,0.1); color: var(--accent-teal); }
+
+.cs-workflow__steps { display: flex; flex-direction: column; gap: var(--space-sm); }
+.cs-workflow__step { display: flex; align-items: center; gap: var(--space-md); padding: 12px 16px; background: var(--bg-card); border: 1px solid var(--border-light); border-left: 3px solid rgba(220,80,60,0.3); border-radius: var(--radius-md); font-size: 14px; color: var(--text-secondary); }
+.cs-workflow__step--after { border-left-color: rgba(14,124,123,0.3); }
+
+.cs-workflow__time { font-family: var(--font-mono); font-size: 13px; font-weight: 600; text-align: center; padding: 8px; border-radius: var(--radius-sm); }
+.cs-workflow__time--before { color: #c0392b; background: rgba(220,80,60,0.06); }
+.cs-workflow__time--after { color: var(--accent-teal); background: rgba(14,124,123,0.06); }
+
+.cs-workflow__divider { color: var(--text-muted); padding: var(--space-md); }
+@media (min-width: 768px) { .cs-workflow__divider { padding-top: 100px; } }
+
+/* ---- 5 PHONES — dark section ---- */
+.cs-phones { background: var(--bg-dark); padding: 20px 0 100px; }
+
+.cs-phones__row { display: flex; gap: var(--space-md); align-items: flex-end; justify-content: center; flex-wrap: wrap; padding-bottom: var(--space-xl); }
+
+.cs-phone { display: flex; flex-direction: column; align-items: center; gap: var(--space-md); }
+.cs-phone--up { transform: translateY(-24px); }
+
+.cs-phone__img { width: 130px; height: auto; border-radius: 16px; box-shadow: 0 25px 60px rgba(0,0,0,0.4); }
+@media (min-width: 768px) { .cs-phone__img { width: 150px; } }
+@media (min-width: 1024px) { .cs-phone__img { width: 170px; } }
+
+.cs-phone__label { color: var(--text-on-dark-secondary); font-size: 11px; }
+
+/* Hero single phone — larger */
+.cs-phones__row--hero { justify-content: center; padding: 20px 0; }
+.cs-phone__img--large { width: 220px !important; }
+@media (min-width: 768px) { .cs-phone__img--large { width: 260px !important; } }
+
+/* ---- KPIs ---- */
+.cs-kpis { padding: 100px 0; }
+@media (min-width: 768px) { .cs-kpis { padding: 120px 0; } }
+
+.cs-kpis__list { list-style: none; padding: 0; margin: var(--space-xl) 0 0; }
+.cs-kpis__list li { padding: 1em 0; border-top: 1px solid var(--border-light); font-size: 16px; color: var(--text-secondary); }
+.cs-kpis__list li:last-child { border-bottom: 1px solid var(--border-light); }
+.cs-kpis__list strong { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(36px, 5vw, 52px); line-height: 1; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 4px; }
+
+/* ---- KEY INSIGHT ---- */
+.cs-insight { padding: 40px 0 80px; }
+.cs-insight__card { display: flex; gap: var(--space-lg); padding: var(--space-xl); background: var(--bg-card); border-left: 3px solid var(--accent-teal); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+.cs-insight__icon { color: var(--accent-teal); flex-shrink: 0; padding-top: 2px; }
+.cs-insight__card blockquote { font-size: 17px; line-height: 1.7; color: var(--text-secondary); font-style: italic; }
+
+/* ---- CREDITS ---- */
+.cs-credits { padding: 80px 0; border-top: 1px solid var(--border-light); }
+.cs-credits__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+@media (max-width: 600px) { .cs-credits__grid { grid-template-columns: 1fr; } }
+.cs-credits__title { color: var(--text-muted); margin-bottom: 16px; }
+.cs-credits__list { list-style: none; padding: 0; margin: 0; }
+.cs-credits__list li { font-size: 15px; color: var(--text-secondary); padding: 5px 0; }
+
+/* ---- CTA ---- */
+.cs-cta { padding: 120px 0; text-align: center; }
+@media (min-width: 768px) { .cs-cta { padding: 160px 0; } }
+.cs-cta__title { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 32px; }
+
+/* ---- NEXT PROJECT ---- */
+.cs-next { background: var(--bg-dark); }
+.cs-next__link { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 100px var(--container-padding); gap: 16px; transition: opacity 0.4s; }
+.cs-next__link:hover { opacity: 0.7; }
+.cs-next__link .mono-label { color: rgba(255,255,255,0.4); }
+.cs-next__title { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 6vw, 64px); line-height: 1.05; letter-spacing: -0.03em; color: white; }
+.cs-next__sub { font-size: 15px; color: rgba(255,255,255,0.4); }
+
+/* ---- PROGRESS BAR ---- */
+.cs-progress { position: fixed; bottom: 0; left: 0; width: 100%; height: 3px; z-index: 100; }
+.cs-progress__fill { height: 100%; width: 0%; background: var(--accent-teal); transition: width 0.1s linear; }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { margin: 0; padding: 40px; background: #ddd; display: flex; gap: 32px; flex-wrap: wrap; align-items: start; font-family: system-ui; }
+  .label { text-align: center; font-size: 13px; color: #666; margin-top: 8px; }
+  canvas { display: block; }
+  a { display: inline-block; margin-top: 10px; padding: 8px 20px; background: #0E7C7B; color: white; text-decoration: none; border-radius: 6px; font-size: 14px; text-align: center; width: 100%; box-sizing: border-box; }
+  a:hover { background: #12A5A4; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div>
+  <canvas id="c1" width="300" height="300"></canvas>
+  <div class="label">Paper background (matches website)</div>
+  <a id="dl1" download="kurti-logo-paper.png">Download PNG</a>
+</div>
+
+<div>
+  <canvas id="c2" width="300" height="300"></canvas>
+  <div class="label">Teal background</div>
+  <a id="dl2" download="kurti-logo-teal.png">Download PNG</a>
+</div>
+
+<div>
+  <canvas id="c3" width="300" height="300"></canvas>
+  <div class="label">Dark background</div>
+  <a id="dl3" download="kurti-logo-dark.png">Download PNG</a>
+</div>
+
+<script>
+function drawLogo(canvas, bgColor, textColor) {
+  const ctx = canvas.getContext('2d');
+  const s = 300;
+
+  // Background (fill entire square — no rounding so the PNG has full coverage)
+  ctx.fillStyle = bgColor;
+  ctx.fillRect(0, 0, s, s);
+
+  // Letter K — Space Grotesk bold, same as the website
+  ctx.fillStyle = textColor;
+  ctx.font = "bold 180px 'Space Grotesk', system-ui, sans-serif";
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('K', s/2, s/2 + 4);
+}
+
+document.fonts.ready.then(() => {
+  // Paper background — same as the website
+  drawLogo(document.getElementById('c1'), '#F5F0EB', '#1C1C1E');
+  document.getElementById('dl1').href = document.getElementById('c1').toDataURL('image/png');
+
+  // Teal
+  drawLogo(document.getElementById('c2'), '#0E7C7B', '#FFFFFF');
+  document.getElementById('dl2').href = document.getElementById('c2').toDataURL('image/png');
+
+  // Dark
+  drawLogo(document.getElementById('c3'), '#1C1C1E', '#F5F0EB');
+  document.getElementById('dl3').href = document.getElementById('c3').toDataURL('image/png');
+});
+</script>
+</body>
+</html>

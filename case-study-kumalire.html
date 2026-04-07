@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KuMaLire — AI Price Comparison App | Kurti Consulting</title>
+  <meta name="description" content="How we built an AI-powered grocery price comparison app that reads store flyers and tracks prices across 14 Kosovo supermarkets.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='system-ui' font-weight='bold'>K</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/case-study.css">
+</head>
+<body>
+
+  <div class="cursor" id="cursor">
+    <div class="cursor__dot"></div>
+    <div class="cursor__outline"></div>
+  </div>
+
+  <header class="nav" id="nav">
+    <div class="nav__container">
+      <a href="/" class="nav__logo"><span class="nav__logo-main">KURTI</span><span class="nav__logo-sub">consulting</span></a>
+      <nav class="nav__links">
+        <a href="/#services" class="nav__link">Services</a>
+        <a href="/#work" class="nav__link">Work</a>
+        <a href="/#about" class="nav__link">About</a>
+        <a href="/#contact" class="nav__link">Contact</a>
+      </nav>
+      <a href="/#contact" class="nav__cta magnetic-btn"><span>Book a Call</span></a>
+      <button class="nav__hamburger" id="navHamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+      <a href="/#services" class="mobile-menu__link">Services</a>
+      <a href="/#work" class="mobile-menu__link">Work</a>
+      <a href="/#about" class="mobile-menu__link">About</a>
+      <a href="/#contact" class="mobile-menu__link">Contact</a>
+      <a href="/#contact" class="mobile-menu__cta">Book a Call</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="cs-hero">
+      <div class="cs-container">
+        <a href="/#work" class="cs-back mono-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to Work
+        </a>
+        <div class="cs-hero__meta">
+          <span class="tag">AI / Retail</span>
+          <span class="mono-label">2025</span>
+          <span class="mono-label">Ongoing</span>
+        </div>
+        <h1 class="cs-hero__title">AI-Powered Price Comparison<br>for Kosovo's <span class="cs-hero__accent">Grocery Market</span></h1>
+        <p class="cs-hero__tagline">We built an Android app and backend system that tracks prices across 14 supermarkets — using artificial intelligence to read store flyers that no traditional scraper could touch.</p>
+        <div class="cs-hero__scroll">
+          <div class="cs-hero__scroll-line"></div>
+          <span class="mono-label">Scroll to read</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERO IMAGE — home screen on dark gradient -->
+    <section class="cs-image cs-image--gradient" style="--gf: #0f172a; --gt: #1e293b;">
+      <div class="cs-container">
+        <div class="cs-phones__row cs-phones__row--hero">
+          <div class="cs-phone">
+            <img src="assets/kml-home.jpg" alt="KuMaLire home screen" class="cs-phone__img cs-phone__img--large" loading="eager" width="720" height="1560">
+          </div>
+        </div>
+        <p class="cs-caption cs-caption--light mono-label">Search products, browse categories, compare prices across 14 stores</p>
+      </div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <section class="cs-text">
+      <div class="cs-container cs-container--narrow">
+        <span class="mono-label cs-label">The Problem</span>
+        <h2 class="cs-heading">Kosovo shoppers had no way to compare grocery prices</h2>
+        <p>Every supermarket publishes offers differently. Albi posts flyers on Facebook. SPAR uploads PDFs. Interex prints paper leaflets. Some stores only post on Instagram stories that disappear in 24 hours.</p>
+        <p>Finding the cheapest price on something as basic as apples meant checking half a dozen sources — different websites, different social media pages, different formats. Nobody had time for that.</p>
+      </div>
+    </section>
+
+    <!-- PRICE COMPARISON — on dark gradient -->
+    <section class="cs-image cs-image--gradient cs-image--compact" style="--gf: #1a1a2e; --gt: #16213e;">
+      <div class="cs-container">
+        <div class="cs-phones__row">
+          <div class="cs-phone">
+            <img src="assets/kml-compare-half.jpg" alt="Price comparison opening" class="cs-phone__img" loading="lazy" width="720" height="1560">
+          </div>
+          <div class="cs-phone cs-phone--up">
+            <img src="assets/kml-compare-full.jpg" alt="Full price comparison across stores" class="cs-phone__img" loading="lazy" width="720" height="1560">
+          </div>
+        </div>
+        <p class="cs-caption cs-caption--light mono-label">Tap any product to see who has the best price — instantly</p>
+      </div>
+    </section>
+
+    <!-- PIPELINE — designed visual on dark -->
+    <section class="cs-image cs-image--gradient" style="--gf: #0a0a1a; --gt: #1e1b4b; padding: 60px 0;">
+      <div class="cs-container">
+        <img src="assets/visual-kumalire-pipeline.png" alt="Full data pipeline: Store Sources to Scrapers to AI to Database to App" class="cs-designed" loading="lazy" width="1200" height="700">
+      </div>
+    </section>
+
+    <!-- THE SOLUTION -->
+    <section class="cs-text">
+      <div class="cs-container cs-container--narrow">
+        <span class="mono-label cs-label">The Solution</span>
+        <h2 class="cs-heading">14 scrapers, one AI brain, and an app that does the work for you</h2>
+        <p>We built the entire pipeline from scratch: an Android app for consumers, a FastAPI backend for data processing, and a scraping engine that pulls prices from every major Kosovo supermarket automatically.</p>
+        <p>The system covers Albi Market, ETC, Interex, SPAR, SuperViva, VivaFresh, Vipros, and Maxi — plus dedicated Facebook and Instagram scrapers for stores that only post offers on social media.</p>
+      </div>
+    </section>
+
+    <!-- FLYERS — THE AI SECTION (this is the hero of this case study) -->
+    <section class="cs-text cs-text--dark">
+      <div class="cs-container cs-container--narrow">
+        <span class="mono-label cs-label cs-label--light">The AI Engine</span>
+        <h2 class="cs-heading cs-heading--light">Reading flyer images that no scraper can touch</h2>
+        <p class="cs-p--light">Many Kosovo stores publish offers as photographed flyer images — a photo of a printed leaflet posted on Facebook, a scanned PDF uploaded to a website, an Instagram story that disappears in 24 hours. These aren't structured data. They're pictures of paper.</p>
+        <p class="cs-p--light">We built a pipeline that sends these images to OpenAI's Vision API, which reads every product name, price, brand, and category from the image automatically. A blurry photo of a crumpled supermarket flyer goes in. Structured price data comes out.</p>
+      </div>
+    </section>
+
+    <!-- OCR PIPELINE — designed visual -->
+    <section class="cs-image" style="padding: 40px 0;">
+      <div class="cs-container">
+        <img src="assets/visual-kumalire-ocr.png" alt="AI Vision pipeline: flyer image to structured data" class="cs-designed" loading="lazy" width="1200" height="700">
+      </div>
+    </section>
+
+    <!-- FLYERS SCREENSHOTS — dark section with 3 phones -->
+    <section class="cs-phones" style="padding-top: 20px;">
+      <div class="cs-container">
+        <div class="cs-phones__row">
+          <div class="cs-phone">
+            <img src="assets/kml-flyers-1.jpg" alt="AlbiMarket and ETC flyers" class="cs-phone__img" loading="lazy" width="720" height="1560">
+            <span class="cs-phone__label mono-label">Albi & ETC Flyers</span>
+          </div>
+          <div class="cs-phone cs-phone--up">
+            <img src="assets/kml-flyers-2.jpg" alt="SPAR and Horeca flyers" class="cs-phone__img" loading="lazy" width="720" height="1560">
+            <span class="cs-phone__label mono-label">SPAR & Horeca</span>
+          </div>
+          <div class="cs-phone">
+            <img src="assets/kml-flyers-3.jpg" alt="SuperViva and Vipros flyers" class="cs-phone__img" loading="lazy" width="720" height="1560">
+            <span class="cs-phone__label mono-label">SuperViva & Vipros</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCRAPERS GRID — designed visual on dark -->
+    <section class="cs-image cs-image--gradient" style="--gf: #0a0a1a; --gt: #151530; padding: 60px 0;">
+      <div class="cs-container">
+        <img src="assets/visual-kumalire-scrapers.png" alt="14 custom scrapers grid with technologies and frequencies" class="cs-designed" loading="lazy" width="1200" height="700">
+      </div>
+    </section>
+
+    <!-- MATCHING EXPLANATION -->
+    <section class="cs-text">
+      <div class="cs-container cs-container--narrow">
+        <span class="mono-label cs-label">Product Matching</span>
+        <h2 class="cs-heading">Different stores, different names, same product</h2>
+        <p>"Molle e Gjelbert" at one store is "Mollë" at another. "Qumësht i freskët 1L" at SPAR might be "Qumesht UHT 1 liter" at Albi. We built a multi-layer matching system: exact matching, RapidFuzz fuzzy matching for typos, LLM-based matching for ambiguous cases, and a curated product whitelist.</p>
+        <p>The result: search "mollë" and instantly see prices from every store that sells apples — regardless of what each store calls them.</p>
+      </div>
+    </section>
+
+    <!-- MATCHING SYSTEM — designed visual -->
+    <section class="cs-image" style="padding: 40px 0;">
+      <div class="cs-container">
+        <img src="assets/visual-kumalire-matching.png" alt="4-layer product matching: exact, fuzzy, LLM, curated whitelist" class="cs-designed" loading="lazy" width="1200" height="700">
+      </div>
+    </section>
+
+    <!-- CATEGORY + COMPARISON screenshots on teal gradient -->
+    <section class="cs-image cs-image--gradient" style="--gf: #0a3d3c; --gt: #0E7C7B;">
+      <div class="cs-container">
+        <div class="cs-phones__row">
+          <div class="cs-phone">
+            <img src="assets/kml-fruits.jpg" alt="Fruits category grid" class="cs-phone__img" loading="lazy" width="720" height="1560">
+            <span class="cs-phone__label mono-label" style="color: rgba(255,255,255,0.5)">Fruit Categories</span>
+          </div>
+          <div class="cs-phone cs-phone--up">
+            <img src="assets/kml-dairy.jpg" alt="Dairy products" class="cs-phone__img" loading="lazy" width="720" height="1560">
+            <span class="cs-phone__label mono-label" style="color: rgba(255,255,255,0.5)">Dairy Products</span>
+          </div>
+          <div class="cs-phone">
+            <img src="assets/kml-cucumber.jpg" alt="Cucumber price comparison" class="cs-phone__img" loading="lazy" width="720" height="1560">
+            <span class="cs-phone__label mono-label" style="color: rgba(255,255,255,0.5)">Fuzzy Matching</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK — designed visual on dark -->
+    <section class="cs-image cs-image--gradient" style="--gf: #0a0a1a; --gt: #1e1b4b; padding: 60px 0;">
+      <div class="cs-container">
+        <img src="assets/visual-kumalire-tech.png" alt="Tech stack: Backend, AI/ML, Data, Scraping, Mobile" class="cs-designed" loading="lazy" width="1200" height="700">
+      </div>
+    </section>
+
+    <!-- KPIs -->
+    <section class="cs-kpis">
+      <div class="cs-container cs-container--narrow">
+        <span class="mono-label cs-label">The Results</span>
+        <h2 class="cs-heading">The numbers</h2>
+        <ul class="cs-kpis__list">
+          <li><strong>14</strong> supermarkets tracked</li>
+          <li><strong>10,325</strong> lines of backend code</li>
+          <li><strong>14</strong> custom web scrapers</li>
+          <li><strong>3</strong> AI/ML systems (Vision API, LLM matching, OCR)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- WHY THIS MATTERS -->
+    <section class="cs-insight">
+      <div class="cs-container cs-container--narrow">
+        <div class="cs-insight__card">
+          <svg class="cs-insight__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 01-1 1H9a1 1 0 01-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"/><path d="M9 21h6M10 17v1M14 17v1"/></svg>
+          <blockquote>The same techniques that power KuMaLire — web scraping, AI-powered data extraction, fuzzy matching, scheduled pipelines — solve problems across every industry. If your business involves gathering data from multiple sources, we can build a system that does it automatically.</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDITS -->
+    <section class="cs-credits">
+      <div class="cs-container cs-container--narrow">
+        <div class="cs-credits__grid">
+          <div>
+            <h3 class="cs-credits__title mono-label">Tech Stack</h3>
+            <ul class="cs-credits__list">
+              <li>Python / FastAPI</li>
+              <li>PostgreSQL / Redis</li>
+              <li>OpenAI Vision API</li>
+              <li>Playwright / Scrapers</li>
+              <li>Tesseract OCR / OpenCV</li>
+              <li>Kotlin / Android</li>
+              <li>Docker Compose</li>
+              <li>RapidFuzz / APScheduler</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="cs-credits__title mono-label">Timeline</h3>
+            <ul class="cs-credits__list">
+              <li>2025 — Ongoing</li>
+              <li>Personal project</li>
+            </ul>
+            <h3 class="cs-credits__title mono-label" style="margin-top: 2em;">Team</h3>
+            <ul class="cs-credits__list">
+              <li>Fisnik Kurti — Everything</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cs-cta">
+      <div class="cs-container">
+        <h2 class="cs-cta__title">Drowning in data from too many sources?</h2>
+        <p style="font-size: 17px; color: var(--text-secondary); margin-bottom: 32px; max-width: 550px; margin-left: auto; margin-right: auto;">We build systems that gather, clean, and centralize information automatically — so you can make decisions instead of collecting spreadsheets.</p>
+        <a href="/#contact" class="btn btn--primary btn--large magnetic-btn">
+          <span>Let's Talk About Your Data</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- NEXT PROJECT -->
+    <section class="cs-next">
+      <a href="case-study-ecu.html" class="cs-next__link">
+        <span class="mono-label">(Next project)</span>
+        <span class="cs-next__title">ECU Tuner Professional</span>
+        <span class="cs-next__sub">Automotive &bull; 2025</span>
+      </a>
+    </section>
+
+  </main>
+
+  <div class="cs-progress"><div class="cs-progress__fill" id="pf"></div></div>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo"><span class="footer__logo-main">KURTI</span><span class="footer__logo-sub">consulting</span></div>
+          <p class="footer__tagline">Custom software for businesses<br>that have outgrown spreadsheets.</p>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title mono-label">Navigation</h4>
+          <a href="/" class="footer__link">Home</a>
+          <a href="/#services" class="footer__link">Services</a>
+          <a href="/#work" class="footer__link">Work</a>
+          <a href="/#contact" class="footer__link">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title mono-label">Case Studies</h4>
+          <a href="case-study-darn.html" class="footer__link">DARN Group</a>
+          <a href="case-study-kumalire.html" class="footer__link">KuMaLire</a>
+          <a href="case-study-ecu.html" class="footer__link">ECU Tuner</a>
+          <a href="case-study-halrcall.html" class="footer__link">Enterprise SaaS</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title mono-label">Connect</h4>
+          <a href="mailto:hello@kurticonsulting.com" class="footer__link">hello@kurticonsulting.com</a>
+          <a href="https://github.com/fisnik-kurti" class="footer__link" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/fisnik-kurti" class="footer__link" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Kurti Consulting. All rights reserved.</p>
+        <p class="footer__location">Pristina, Kosovo &bull; Available EST Business Hours</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="page-transition" id="pageTransition">
+    <div class="page-transition__bar"></div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    const pf=document.getElementById('pf');
+    if(pf){let t=false;window.addEventListener('scroll',()=>{if(!t){t=true;requestAnimationFrame(()=>{pf.style.width=Math.min((window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100,100)+'%';t=false;});}},{passive:true});}
+  </script>
+</body>
+</html>

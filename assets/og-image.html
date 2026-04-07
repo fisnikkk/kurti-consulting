@@ -1,0 +1,96 @@
+<!-- Open this in a browser and screenshot it at 1200x630 to create og-image.png -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400&display=swap');
+  body {
+    width: 1200px;
+    height: 630px;
+    background: #F5F0EB;
+    font-family: 'Space Grotesk', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .content {
+    text-align: left;
+    padding: 80px 100px;
+    width: 100%;
+  }
+  .logo {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #1C1C1E;
+    margin-bottom: 8px;
+  }
+  .logo span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    color: #6B6560;
+    margin-left: 6px;
+  }
+  h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #1C1C1E;
+    margin-top: 40px;
+    max-width: 700px;
+  }
+  h1 em {
+    color: #0E7C7B;
+    font-style: normal;
+  }
+  .sub {
+    font-size: 20px;
+    color: #6B6560;
+    margin-top: 20px;
+    max-width: 550px;
+    line-height: 1.5;
+  }
+  .accent-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #0E7C7B, #E07A5F);
+  }
+  .dot {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(14, 124, 123, 0.06);
+    top: -50px;
+    right: -50px;
+  }
+  .dot2 {
+    width: 200px;
+    height: 200px;
+    background: rgba(224, 122, 95, 0.05);
+    top: auto;
+    bottom: 40px;
+    right: 100px;
+  }
+</style>
+</head>
+<body>
+  <div class="dot"></div>
+  <div class="dot dot2"></div>
+  <div class="content">
+    <div class="logo">KURTI <span>consulting</span></div>
+    <h1>We build software that <em>replaces your manual work</em></h1>
+    <p class="sub">Custom dashboards, automation tools, and apps for businesses that have outgrown spreadsheets.</p>
+  </div>
+  <div class="accent-bar"></div>
+</body>
+</html>
