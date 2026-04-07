@@ -764,13 +764,13 @@ body::after {
 
 .hero__scroll-indicator {
   position: absolute;
-  bottom: var(--space-xl);
+  bottom: var(--space-lg);
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
   opacity: 0;
   animation: heroScrollFade 1s var(--ease-out) 2s forwards;
 }
@@ -883,7 +883,7 @@ body::after {
 /* STATS SECTION                                 */
 /* ============================================= */
 .stats {
-  padding: var(--space-5xl) 0;
+  padding: var(--space-2xl) 0;
 }
 
 .stats__container {
@@ -933,7 +933,7 @@ body::after {
 /* SERVICES SECTION                              */
 /* ============================================= */
 .services {
-  padding: var(--space-5xl) 0;
+  padding: var(--space-3xl) 0;
 }
 
 .services__container {
@@ -1023,7 +1023,7 @@ body::after {
 /* FEATURED WORK SECTION                         */
 /* ============================================= */
 .work {
-  padding: var(--space-5xl) 0;
+  padding: var(--space-3xl) 0;
   background: var(--bg-alt);
 }
 
@@ -1322,7 +1322,7 @@ body::after {
 /* HOW WE WORK / PROCESS SECTION                 */
 /* ============================================= */
 .process {
-  padding: var(--space-4xl) 0;
+  padding: var(--space-3xl) 0;
 }
 
 .process__container {
@@ -1393,7 +1393,7 @@ body::after {
 /* RESULTS SECTION (replaces testimonials)       */
 /* ============================================= */
 .results {
-  padding: var(--space-5xl) 0;
+  padding: var(--space-3xl) 0;
   background: var(--bg-dark);
   color: var(--text-on-dark);
   position: relative;
@@ -1509,7 +1509,7 @@ body::after {
 /* ABOUT TEASER SECTION                          */
 /* ============================================= */
 .about {
-  padding: var(--space-5xl) 0;
+  padding: var(--space-3xl) 0;
 }
 
 .about__container {
@@ -1667,7 +1667,7 @@ body::after {
 /* TECH STACK SECTION                            */
 /* ============================================= */
 .tech {
-  padding: var(--space-2xl) 0 var(--space-4xl);
+  padding: var(--space-2xl) 0 var(--space-3xl);
 }
 
 .tech__container {
@@ -1706,7 +1706,7 @@ body::after {
 /* CTA SECTION                                   */
 /* ============================================= */
 .cta-section {
-  padding: var(--space-4xl) 0;
+  padding: var(--space-3xl) 0;
   background: var(--bg-alt);
   text-align: center;
 }
@@ -1739,7 +1739,7 @@ body::after {
 /* CONTACT SECTION                               */
 /* ============================================= */
 .contact {
-  padding: var(--space-5xl) 0;
+  padding: var(--space-3xl) 0;
 }
 
 .contact__container {

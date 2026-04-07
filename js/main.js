@@ -265,21 +265,17 @@ function initGSAP() {
     });
   }
 
-  // ---- Pinned stats reveal (desktop only) ----
-  if (window.innerWidth >= 768 && document.querySelector('.stats')) {
+  // ---- Stats reveal (no pin — avoids layout gaps) ----
+  if (document.querySelector('.stats')) {
     const statsSection = document.querySelector('.stats');
     const statsItems = statsSection.querySelectorAll('.stats__item');
 
-    // Set initial state — hidden
     gsap.set(statsItems, { opacity: 0, y: 60, scale: 0.9 });
 
     const statsTl = gsap.timeline({
       scrollTrigger: {
         trigger: statsSection,
-        start: 'top center',
-        end: 'bottom center',
-        pin: true,
-        scrub: false,
+        start: 'top 75%',
         once: true,
       }
     });
