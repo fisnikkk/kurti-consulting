@@ -87,8 +87,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: auto; /* Lenis handles smooth scroll */
-  scrollbar-gutter: stable;
 }
+
+/* Hide scrollbar — Lenis handles smooth scrolling */
+html::-webkit-scrollbar { display: none; }
+html { -ms-overflow-style: none; scrollbar-width: none; }
 
 html.lenis, html.lenis body {
   height: auto;
