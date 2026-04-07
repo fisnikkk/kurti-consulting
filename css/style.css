@@ -1039,7 +1039,6 @@ body::after {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-3xl);
-  justify-items: center;
 }
 
 @media (min-width: 768px) {
@@ -1055,8 +1054,7 @@ body::after {
   transition: all var(--duration-normal) var(--ease-out-expo);
   border: 1px solid var(--border-light);
   position: relative;
-  max-width: 900px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .work-card:hover {
