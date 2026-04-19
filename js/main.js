@@ -27,6 +27,7 @@ function initPreloader() {
     initNavigation();
     initMobileMenu();
     initStatsCounter();
+    initShowcaseStack();
     initContactForm();
     initPageTransitions();
   }
@@ -605,6 +606,142 @@ function animateCounter(el) {
   }
 
   requestAnimationFrame(update);
+}
+
+/* ============================================= */
+/* SHOWCASE STACK — pinned scroll-linked cards    */
+/* ============================================= */
+function initShowcaseStack() {
+  const section = document.querySelector('.work');
+  const cards = Array.from(document.querySelectorAll('.showcase-card'));
+  if (!section || cards.length === 0) return;
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const desktop = () => window.matchMedia('(min-width: 900px)').matches;
+
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+  // Smooth cubic easing — removes the "snap" at phase boundaries
+  function easeInOut(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function update() {
+    if (!desktop()) {
+      cards.forEach(c => {
+        c.style.transform = '';
+        c.style.opacity = '';
+        c.style.zIndex = '';
+      });
+      return;
+    }
+
+    const rect = section.getBoundingClientRect();
+    const total = Math.max(1, section.offsetHeight - window.innerHeight);
+    const scrolled = clamp(-rect.top, 0, total);
+    const progress = scrolled / total;
+
+    // Use N-0.5 effective slots — the last card doesn't need a full recede slot,
+    // which removes the empty scroll tail after it settles.
+    const slot = 1 / (cards.length - 0.5);
+
+    const lastIndex = cards.length - 1;
+
+    cards.forEach((card, i) => {
+      const local = (progress - i * slot) / slot; // -∞ to 1+
+      const isLast = i === lastIndex;
+
+      let tx = 'translateY(110%) scale(0.94) translateZ(-100px)';
+      let opacity = 0;
+      let z = i + 1;
+
+      if (isLast && local >= 0) {
+        // Last card never recedes — just slides in and stays front
+        const raw = Math.min(1, (local + 0.7) / 0.7);
+        const t = easeInOut(raw);
+        const ty = (1 - t) * 110;
+        const scale = 0.94 + t * 0.06;
+        tx = `translateY(${ty}%) scale(${scale}) translateZ(0)`;
+        opacity = Math.min(1, t);
+        z = 100;
+      } else if (local >= 0 && local < 0.35) {
+        // Active window — front, clean
+        tx = 'translateY(0%) rotateX(0deg) scale(1) translateZ(0)';
+        opacity = 1;
+        z = 100 - i;
+      } else if (local >= 0.35 && local < 0.7) {
+        // Receding motion — card tilts back, fully visible
+        const raw = (local - 0.35) / 0.35;
+        const t = easeInOut(raw);
+        const ty = -t * 62;
+        const angle = t * 18;
+        const scale = 1 - t * 0.08;
+        const tz = -t * 120;
+        tx = `translateY(${ty}%) rotateX(${angle}deg) scale(${scale}) translateZ(${tz}px)`;
+        opacity = 1;
+        z = 80 - i;
+      } else if (local >= 0.7 && local < 1) {
+        // Fade-out phase — card stays tilted, fades as next takes over
+        const raw = (local - 0.7) / 0.3;
+        const t = easeInOut(raw);
+        tx = 'translateY(-62%) rotateX(18deg) scale(0.92) translateZ(-120px)';
+        opacity = 1 - t;             // 1 → 0 by the time next card is fully active
+        z = 70 - i;
+      } else if (local >= 1) {
+        // Fully past — hidden
+        tx = 'translateY(-62%) rotateX(18deg) scale(0.92) translateZ(-120px)';
+        opacity = 0;
+        z = 0;
+      } else if (local > -0.7) {
+        // Entering from below — long, eased ramp
+        const raw = (local + 0.7) / 0.7;
+        const t = easeInOut(raw);
+        const ty = (1 - t) * 110;
+        const scale = 0.94 + t * 0.06;
+        tx = `translateY(${ty}%) scale(${scale}) translateZ(0)`;
+        opacity = t;
+        z = 100 - i;
+      }
+
+      if (reduced) {
+        card.style.transform = 'none';
+        card.style.opacity = (local >= 0 && local < 1) ? '1' : '0';
+      } else {
+        card.style.transform = tx;
+        card.style.opacity = String(opacity);
+      }
+      card.style.zIndex = String(z);
+    });
+  }
+
+  let rafId = null;
+  function onScroll() {
+    if (rafId !== null) return;
+    rafId = requestAnimationFrame(() => {
+      rafId = null;
+      update();
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+
+  // Make entire card clickable (routes to the card's case-study link)
+  cards.forEach((card) => {
+    const link = card.querySelector('.showcase-card__link');
+    const href = link && link.getAttribute('href');
+    if (!href) return;
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+      // If the user already clicked a real anchor or button, don't hijack
+      if (e.target.closest('a, button')) return;
+      // Use the same page-transition flow if present, otherwise plain navigate
+      if (typeof sessionStorage !== 'undefined') {
+        sessionStorage.setItem('page-transitioning', '1');
+      }
+      window.location.href = href;
+    });
+  });
 }
 
 /* ============================================= */
